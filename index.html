@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Hassan Raza — Graphic Designer specializing in branding, social media design, posters and visual communication.">
+
+<title>Hassan Raza — Graphic Designer</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+:root {
+    --bg: #09090b;
+    --card: #121216;
+    --card2: #18181d;
+    --text: #f5f5f2;
+    --muted: #a4a4aa;
+    --line: #29292f;
+    --accent: #d8ff4f;
+    --max-width: 1180px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(
+        var(--max-width),
+        calc(100% - 40px)
+    );
+    margin: auto;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(9, 9, 11, 0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #c5c5ca;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.menu-button {
+    display: none;
+
+    border: none;
+    background: none;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 130px;
+    padding-bottom: 80px;
+
+    position: relative;
+}
+
+.hero-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    filter: blur(180px);
+
+    opacity: 0.06;
+
+    right: -200px;
+    top: 100px;
+
+    pointer-events: none;
+}
+
+.eyebrow {
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(
+        58px,
+        9vw,
+        125px
+    );
+
+    line-height: 0.88;
+
+    letter-spacing: -7px;
+
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 40px;
+
+    margin-top: 60px;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 22px;
+
+    border-radius: 100px;
+
+    border: 1px solid var(--line);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background: var(--accent);
+
+    color: #09090b;
+
+    border-color: var(--accent);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 110px 0;
+}
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-bottom: 45px;
+}
+
+.section-number {
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-size: clamp(
+        40px,
+        5vw,
+        70px
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-top: 8px;
+}
+
+.section-description {
+    max-width: 420px;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.project {
+    background: var(--card);
+
+    border: 1px solid var(--line);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+
+    border-color: #46464e;
+}
+
+.project-image {
+    height: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* Demo project backgrounds */
+
+.project-1 {
+    background:
+    linear-gradient(
+        135deg,
+        #292929,
+        #0d0d0d
+    );
+}
+
+.project-2 {
+    background:
+    linear-gradient(
+        135deg,
+        #ded8ca,
+        #89847b
+    );
+}
+
+.project-3 {
+    background:
+    linear-gradient(
+        135deg,
+        #c8e9ff,
+        #f4faff
+    );
+}
+
+.project-4 {
+    background:
+    linear-gradient(
+        135deg,
+        #302117,
+        #a8754d
+    );
+}
+
+.demo-logo {
+    font-size: 72px;
+
+    font-weight: 900;
+
+    letter-spacing: -6px;
+}
+
+.project-2 .demo-logo {
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    font-size: 75px;
+}
+
+.project-3 .demo-logo {
+    text-align: center;
+
+    font-size: 50px;
+
+    line-height: 0.85;
+}
+
+.project-4 .demo-logo {
+    font-size: 65px;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-title {
+    font-size: 24px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.project-category {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-top: 6px;
+}
+
+.project-tag {
+    display: inline-block;
+
+    margin-top: 17px;
+
+    padding: 6px 11px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 50px;
+
+    color: #c8c8cc;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+.about-heading {
+    font-size: clamp(
+        30px,
+        4vw,
+        52px
+    );
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+}
+
+.about-heading span {
+    color: var(--accent);
+}
+
+.about-text {
+    max-width: 550px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+.about-text p + p {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1px;
+
+    background: var(--line);
+
+    border: 1px solid var(--line);
+
+    margin-top: 55px;
+}
+
+.skill {
+    background: var(--bg);
+
+    padding: 25px;
+
+    font-weight: 700;
+}
+
+.skill-number {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border-top: 1px solid var(--line);
+}
+
+.process-step {
+    padding: 28px 18px 28px 0;
+
+    border-right: 1px solid var(--line);
+
+    margin-right: 18px;
+}
+
+.process-step:last-child {
+    border-right: none;
+}
+
+.process-number {
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.process-step h3 {
+    margin: 20px 0 8px;
+
+    font-size: 20px;
+}
+
+.process-step p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+    background: var(--card);
+
+    border: 1px solid var(--line);
+
+    border-radius: 30px;
+
+    padding: 70px;
+}
+
+.contact-box h2 {
+    max-width: 850px;
+}
+
+.contact-box h2 span {
+    color: var(--accent);
+}
+
+.contact-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-top: 55px;
+}
+
+.contact-description {
+    max-width: 450px;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid var(--line);
+
+    padding: 35px 0;
+
+    color: #77777e;
+
+    font-size: 13px;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 76px;
+
+        left: 20px;
+
+        right: 20px;
+
+        padding: 20px;
+
+        background: var(--card);
+
+        border: 1px solid var(--line);
+
+        border-radius: 18px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero-bottom,
+    .section-header,
+    .contact-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .projects,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 300px;
+    }
+
+    .process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-step {
+        border-right: none;
+
+        border-bottom: 1px solid var(--line);
+    }
+
+    .contact-box {
+        padding: 45px 25px;
+    }
+}
+
+
+@media(max-width: 480px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .hero h1 {
+        font-size: 58px;
+
+        letter-spacing: -4px;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    .skills,
+    .process {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 260px;
+    }
+
+    .section-title {
+        letter-spacing: -2px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+<div class="container nav-container">
+
+<a href="#home" class="logo">
+HASSAN<span>.</span>
+</a>
+
+<button class="menu-button">
+☰
+</button>
+
+<div class="nav-links">
+
+<a href="#work">Work</a>
+
+<a href="#about">About</a>
+
+<a href="#process">Process</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-glow"></div>
+
+<div class="container">
+
+<div class="eyebrow">
+Graphic Designer · Visual Creator
+</div>
+
+<h1>
+
+Designing ideas<br>
+
+into <span>visual</span><br>
+
+experiences.
+
+</h1>
+
+
+<div class="hero-bottom">
+
+<p class="hero-description">
+
+I'm Hassan Raza, a graphic designer focused on clean branding,
+social media visuals, posters and visual communication that makes
+ideas easier to remember.
+
+</p>
+
+
+<div class="buttons">
+
+<a href="#work" class="button button-primary">
+Explore My Work ↓
+</a>
+
+<a href="#contact" class="button">
+Let's Talk
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     WORK
+========================= -->
+
+<section id="work">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="section-number">
+01 / SELECTED WORK
+</div>
+
+<h2 class="section-title">
+Projects.
+</h2>
+
+</div>
+
+<p class="section-description">
+
+A selection of branding, social media and visual design projects.
+Replace these demo visuals with your actual work.
+
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- PROJECT 1 -->
+
+<article class="project reveal">
+
+<div class="project-image project-1">
+
+<div class="demo-logo">
+NOVA
+</div>
+
+</div>
+
+<div class="project-info">
+
+<div class="project-title">
+Nova Brand Identity
+</div>
+
+<div class="project-category">
+Logo · Visual Identity · Brand System
+</div>
+
+<span class="project-tag">
+BRANDING
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PROJECT 2 -->
+
+<article class="project reveal">
+
+<div class="project-image project-2">
+
+<div class="demo-logo">
+atelier
+</div>
+
+</div>
+
+<div class="project-info">
+
+<div class="project-title">
+Atelier Stationery
+</div>
+
+<div class="project-category">
+Social Media · Art Direction · Typography
+</div>
+
+<span class="project-tag">
+SOCIAL MEDIA
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PROJECT 3 -->
+
+<article class="project reveal">
+
+<div class="project-image project-3">
+
+<div class="demo-logo">
+MAKE<br>
+IT<br>
+MATTER
+</div>
+
+</div>
+
+<div class="project-info">
+
+<div class="project-title">
+Make It Matter
+</div>
+
+<div class="project-category">
+Campaign Poster · Composition · Type
+</div>
+
+<span class="project-tag">
+POSTER DESIGN
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PROJECT 4 -->
+
+<article class="project reveal">
+
+<div class="project-image project-4">
+
+<div class="demo-logo">
+BREW
+</div>
+
+</div>
+
+<div class="project-info">
+
+<div class="project-title">
+Brew Visual Direction
+</div>
+
+<div class="project-category">
+Branding · Packaging · Social Content
+</div>
+
+<span class="project-tag">
+VISUAL IDENTITY
+</span>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="section-number">
+02 / ABOUT ME
+</div>
+
+<h2 class="section-title">
+Behind<br>
+the work.
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-heading reveal">
+
+I turn simple ideas into
+
+<span>
+clear, memorable visuals.
+</span>
+
+</div>
+
+
+<div class="about-text reveal">
+
+<p>
+
+I'm Hassan Raza, a graphic designer building my skills through
+real-world style projects and creative practice. I enjoy exploring
+how typography, color, layout and imagery work together to communicate
+an idea.
+
+</p>
+
+<p>
+
+My focus is on thoughtful design rather than decoration.
+Every project is an opportunity to understand the message,
+create a strong visual direction and refine the details.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="skills reveal">
+
+
+<div class="skill">
+
+<span class="skill-number">01</span>
+
+Logo & Brand Identity
+
+</div>
+
+
+<div class="skill">
+
+<span class="skill-number">02</span>
+
+Social Media Design
+
+</div>
+
+
+<div class="skill">
+
+<span class="skill-number">03</span>
+
+Poster & Campaign Design
+
+</div>
+
+
+<div class="skill">
+
+<span class="skill-number">04</span>
+
+Typography & Layout
+
+</div>
+
+
+<div class="skill">
+
+<span class="skill-number">05</span>
+
+Adobe Photoshop
+
+</div>
+
+
+<div class="skill">
+
+<span class="skill-number">06</span>
+
+Adobe Illustrator
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section id="process">
+
+<div class="container">
+
+<div class="section-header reveal">
+
+<div>
+
+<div class="section-number">
+03 / PROCESS
+</div>
+
+<h2 class="section-title">
+How I work.
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="process">
+
+
+<div class="process-step reveal">
+
+<div class="process-number">
+01
+</div>
+
+<h3>
+Discover
+</h3>
+
+<p>
+Understand the goal, audience and problem.
+</p>
+
+</div>
+
+
+<div class="process-step reveal">
+
+<div class="process-number">
+02
+</div>
+
+<h3>
+Concept
+</h3>
+
+<p>
+Explore visual directions and build the idea.
+</p>
+
+</div>
+
+
+<div class="process-step reveal">
+
+<div class="process-number">
+03
+</div>
+
+<h3>
+Design
+</h3>
+
+<p>
+Turn the strongest direction into a visual system.
+</p>
+
+</div>
+
+
+<div class="process-step reveal">
+
+<div class="process-number">
+04
+</div>
+
+<h3>
+Refine
+</h3>
+
+<p>
+Improve typography, spacing, color and details.
+</p>
+
+</div>
+
+
+<div class="process-step reveal">
+
+<div class="process-number">
+05
+</div>
+
+<h3>
+Deliver
+</h3>
+
+<p>
+Prepare polished, usable final assets.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box reveal">
+
+<div class="section-number">
+04 / CONTACT
+</div>
+
+
+<h2 class="section-title">
+
+Have an idea?<br>
+
+Let's make it
+
+<span>
+visual.
+</span>
+
+</h2>
+
+
+<div class="contact-bottom">
+
+
+<p class="contact-description">
+
+I'm open to design projects, collaborations and opportunities
+where thoughtful visual design can make a difference.
+
+</p>
+
+
+<div class="buttons">
+
+<!-- CHANGE THIS TO YOUR FULL EMAIL -->
+
+<a
+href="mailto:YOUR-EMAIL@gmail.com"
+class="button button-primary">
+
+Email Me
+
+</a>
+
+
+<!-- YOUR INSTAGRAM -->
+
+<a
+href="https://www.instagram.com/toxic_hassan/"
+target="_blank"
+class="button">
+
+Instagram ↗
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-content">
+
+<div>
+© <span id="year"></span> Hassan Raza
+</div>
+
+<div>
+Graphic Designer · Pakistan
+</div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menuButton =
+document.querySelector(".menu-button");
+
+const navLinks =
+document.querySelector(".nav-links");
+
+
+menuButton.addEventListener(
+"click",
+function() {
+
+navLinks.classList.toggle("active");
+
+});
+
+
+/* CLOSE MOBILE MENU */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link) {
+
+link.addEventListener(
+"click",
+function() {
+
+navLinks.classList.remove("active");
+
+});
+
+});
+
+
+/* CURRENT YEAR */
+
+document.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+
+/* SCROLL ANIMATION */
+
+const observer =
+new IntersectionObserver(
+
+function(entries) {
+
+entries.forEach(function(entry) {
+
+if(entry.isIntersecting) {
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+threshold: 0.12
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element) {
+
+observer.observe(element);
+
+});
+
+</script>
+
+
+</body>
+</html>
